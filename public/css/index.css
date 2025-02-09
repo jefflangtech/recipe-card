@@ -64,6 +64,10 @@
   letter-spacing: 0px;
 }
 
+b {
+  font-weight: normal;
+}
+
 body {
   font-size: 2rem;
   font-family: var(--font-2);

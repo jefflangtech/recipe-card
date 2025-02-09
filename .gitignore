@@ -9,6 +9,7 @@
 style-guide.md
 package-lock.json
 package.json
+app.js
 
 # Ignore specific directories
 /node_modules/

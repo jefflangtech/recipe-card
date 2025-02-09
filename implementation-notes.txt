@@ -1,0 +1,13 @@
+#Header
+Hero image - looks like same top/bottom margin
+H1, maybe with a P - looks like the same bottom margin for both. The paragraph lines have spacing that is equal to the spacing between the li's. Not sure how to implement. It's not a line height, per say, but a bottom margin effective on each line.
+
+#Preparation time
+Top/bottom margin
+Inline margin different
+Maybe an H2 but different styling for the type of section
+
+#Layout System
+This was a new way of thinking, to start by identifying component or content blocks, which themselves won't have margin, and determine the underlying layout which provides all the necessary spacing for those blocks to live in. What naturally came out is a grid of sorts. Thinking this way kept me from spending a ton of time trying to identify universal margins or spacing, worrying about margins collapsing (too much), and other things which, even on a simple design, can take some time to discover. 
+
+One big difference between desktop and mobile is that the hero image breaks out of the top and side padding, and that was one reason why I was trying to find universal margins/padding that would be shared down the sequence of components. But, if using grid, I can have that hero image go from being constrained to the middle column to spanning across all columns. Simple.

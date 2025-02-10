@@ -42,16 +42,21 @@ th {
 }
 
 /* Overlays */
-.desktop-overlay {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 500;
   opacity: 0.5;
+  outline: 1px solid red;
 }
 #desktop-overlay {
   width: 1440px;
   height: 1956px;
+}
+#tablet-overlay {
+  width: 768px;
+  height: 2100px;
 }
 
 /* Utility classes */
@@ -123,6 +128,27 @@ main {
 main > * {
   grid-column: start-col / end-col;
   grid-row: auto;
+}
+
+.hero-img-container {
+  width: 100%;
+  height: 37.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img-container picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 h1 {
@@ -209,6 +235,23 @@ h1 {
     border-bottom: 1px solid var(--stone-150);
   }
   & tr:nth-child(n+2) :is(th, td) {
-    padding-top: 2rem;
+    padding-top: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 
+      [start-left] 5rem 
+      [start-col] 536px [end-col] 
+      5rem [end-right];
+  }
+  .hero-img-container {
+    height: 37.5rem;
+  }
+  .card-content {
+    & th[scope="row"] {
+      width: 32.5rem;
+    }
   }
 }

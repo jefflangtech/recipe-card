@@ -1,3 +1,11 @@
+/* Structure
+ * Imports & custom variables
+ * Reset rules
+ * Utility classes
+ * Primary rules
+ * Responsive rules
+ */
+
 @font-face {
   font-family: 'Young Serif';
   src: url('../fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
@@ -41,28 +49,6 @@ th {
   font-weight: normal;
 }
 
-/* Overlays */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 500;
-  opacity: 0.5;
-  /* outline: 1px solid red; */
-}
-#desktop-overlay {
-  width: 1440px;
-  height: 1956px;
-}
-#tablet-overlay {
-  width: 768px;
-  height: 2100px;
-}
-#mobile-overlay {
-  width: 375px;
-  height: 2043px;
-}
-
 /* Utility classes */
 .text-1 {
   font-family: var(--font-1);
@@ -103,6 +89,8 @@ th {
   border-radius: 1.5rem;
   overflow: hidden;
 }
+
+/* Primary Rules */
 
 body {
   font-size: 2rem;
@@ -242,6 +230,8 @@ h1 {
     padding-top: 1.8rem;
   }
 }
+
+/* Responsive rules */
 
 @media (max-width: 768px) {
   main {

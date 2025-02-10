@@ -48,7 +48,7 @@ th {
   left: 0;
   z-index: 500;
   opacity: 0.5;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 #desktop-overlay {
   width: 1440px;
@@ -57,6 +57,10 @@ th {
 #tablet-overlay {
   width: 768px;
   height: 2100px;
+}
+#mobile-overlay {
+  width: 375px;
+  height: 2043px;
 }
 
 /* Utility classes */
@@ -252,6 +256,35 @@ h1 {
   .card-content {
     & th[scope="row"] {
       width: 32.5rem;
+    }
+  }
+}
+
+@media (max-width: 652px) {
+  main {
+    width: 100%;
+    grid-template-columns: 
+      [start-left] 4rem 
+      [start-col] 1fr [end-col] 
+      4rem [end-right];
+      background-color: var(--white);
+    row-gap: 4rem;
+    margin-inline: auto;
+    margin-block: 0rem;
+    padding-top: 0rem;
+    border-radius: 0rem;
+  }
+  .hero-img-container {
+    grid-column: start-left / end-right;
+    border-radius: 0rem;
+    height: 21.375rem;
+  }
+  .text-1 {
+    font-size: 4.5rem;
+  }
+  .card-content {
+    & th[scope="row"] {
+      width: 18.5rem;
     }
   }
 }

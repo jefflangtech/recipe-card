@@ -37,16 +37,22 @@ ol,
 ul {
   margin: 0;
 }
-
-/* 
- * Testing 
- */
-main > * {
-  /* outline: 1px solid red; */
+th {
+  font-weight: normal;
 }
-/* 
- * End Testing 
- */
+
+/* Overlays */
+.desktop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  opacity: 0.5;
+}
+#desktop-overlay {
+  width: 1440px;
+  height: 1956px;
+}
 
 /* Utility classes */
 .text-1 {
@@ -59,6 +65,7 @@ main > * {
 
 .text-2 {
   font-family: var(--font-1);
+  font-weight: normal;
   font-size: 3.5rem;
   line-height: 100%;
   letter-spacing: 0px;
@@ -91,7 +98,7 @@ main > * {
 body {
   font-size: 2rem;
   font-family: var(--font-2);
-  color: var(--stone-900);
+  color: var(--stone-600);
   background-color: var(--stone-100);
   width: 100%;
 }
@@ -101,14 +108,14 @@ main {
   display: grid;
   grid-template-columns: 
     [start-left] 5rem 
-    [start-col] 736px [end-col] 
+    [start-col] 656px [end-col] 
     5rem [end-right];
   grid-template-rows: repeat(auto-fit, minmax(100px, auto));
   row-gap: 4rem;
   width:max-content;
   margin-inline: auto;
-  margin-top: 16rem;
-  padding-top: 5rem;
+  margin-block: 16rem;
+  padding-block: 5rem;
   border-radius: 3rem;
   overflow: hidden;
 }
@@ -116,6 +123,11 @@ main {
 main > * {
   grid-column: start-col / end-col;
   grid-row: auto;
+}
+
+h1 {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .line-divider {
@@ -135,13 +147,68 @@ main > * {
     letter-spacing: 0px;
     margin-bottom: 2rem;
   }
+  & ul {
+    padding-inline-start: 3rem;
+  }
   & li {
-    padding-left: 3rem;
+    padding-left: 2rem;
   }
   & li::marker {
     color: var(--rose-800);
   }
   & li:nth-last-child(n+2) {
     margin-bottom: 1rem;
+  }
+}
+
+.card-content {
+  & h2 {
+    color: var(--brown-800);
+    font-family: var(--font-1);
+    font-size: 3.5rem;
+    font-weight: normal;
+    line-height: 100%;
+    letter-spacing: 0px;
+    margin-bottom: 3rem;
+  }
+  & :is(ul, ol) {
+    padding-inline-start: 3rem;
+  }
+  & li {
+    padding-left: 2rem;
+  }
+  & li::marker {
+    color: var(--brown-800);
+    font-weight: 700;
+  }
+  & li:nth-last-child(n+2) {
+    margin-bottom: 1rem;
+  }
+  & table {
+    table-layout: fixed;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  & caption {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  & th[scope="row"] {
+    padding-left: 4rem;
+    width: 40rem;
+  }
+  & td {
+    color: var(--brown-800);
+    font-weight: 700;
+    padding-left: 2rem;
+    padding-right: 4rem;
+  }
+  & tr:nth-last-child(n+2) :is(th, td) {
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--stone-150);
+  }
+  & tr:nth-child(n+2) :is(th, td) {
+    padding-top: 2rem;
   }
 }

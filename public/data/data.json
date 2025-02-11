@@ -1,0 +1,79 @@
+{
+  "recipe": {
+    "title": "Simple Omelette Recipe",
+    "preparation": {
+      "title": "Preparation time",
+      "items": [
+        {
+          "label": "Total",
+          "content": "Approximately 10 minutes"
+        },
+        {
+          "label": "Preparation",
+          "content": "5 minutes"
+        },
+        {
+          "label": "Cooking",
+          "content": "5 minutes"
+        }
+      ],
+      "ordered": false
+    },
+    "ingredients": {
+      "title": "Ingredients",
+      "items": [
+        {
+          "label": "",
+          "content": "2-3 large eggs"
+        },
+        {
+          "label": "",
+          "content": "Salt, to taste"
+        },
+        {
+          "label": "",
+          "content": "Pepper, to taste"
+        },
+        {
+          "label": "",
+          "content": "1 tablespoon of butter or oil"
+        },
+        {
+          "label": "",
+          "content": "Optional fillings: cheese, diced vegetables, cooked meats, herbs"
+        }
+      ],
+      "ordered": false
+    },
+    "instructions": {
+      "title": "Instructions",
+      "items": [
+        {
+          "label": "Beat the eggs",
+          "content": "In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture."
+        },
+        {
+          "label": "Heat the pan",
+          "content": "Place a non-stick frying pan over medium heat and add butter or oil."
+        },
+        {
+          "label": "Cook the omelette",
+          "content": "Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface."
+        },
+        {
+          "label": "Add fillings (optional)",
+          "content": "When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette."
+        },
+        {
+          "label": "Fold and serve",
+          "content": "As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate."
+        },
+        {
+          "label": "Enjoy",
+          "content": "Serve hot, with additional salt and pepper if needed."
+        }
+      ],
+      "ordered": true
+    }
+  }
+}

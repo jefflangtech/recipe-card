@@ -10,39 +10,29 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+
 document.addEventListener('DOMContentLoaded', async () => {
   const response = await fetch('./public/data/data.json');
   const data = await response.json();
   const recipe = data.recipe;
 
-  const ingredientsCard = document.createElement('recipe-card');
+  const dataSections = document.querySelectorAll('[data-key]');
 
-  document.querySelector('#ingredients-container').appendChild(ingredientsCard);
+  dataSections.forEach(section => {
 
-  ingredientsCard.content = {
-    title: recipe.ingredients.title,
-    list: recipe.ingredients.items,
-    ordered: recipe.ingredients.ordered
-  }
+    dataKey = section.dataset.key;
 
-  const instructionsCard = document.createElement('recipe-card');
+    if(dataKey === 'title' || dataKey === 'description') {
+      section.textContent = recipe[dataKey];
+      return;
+    }
+    const card = document.createElement('recipe-card');
+    section.appendChild(card);
 
-  document.querySelector('#instructions-container').appendChild(instructionsCard);
-
-  instructionsCard.content = {
-    title: recipe.instructions.title,
-    list: recipe.instructions.items,
-    ordered: recipe.instructions.ordered
-  }
-
-  const preparationCard = document.createElement('recipe-card');
-
-  document.querySelector('#preparation-container').appendChild(preparationCard);
-
-  preparationCard.content = {
-    title: recipe.preparation.title,
-    list: recipe.preparation.items,
-    ordered: recipe.preparation.ordered
-  }
-
+    card.content = {
+      title: recipe.details[dataKey].title,
+      list: recipe.details[dataKey].items,
+      ordered: recipe.details[dataKey].ordered
+    }
+  });
 });

@@ -19,7 +19,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 ### Preview
 
-![](./preview.png)
+![Solution Preview](./preview.png)
 
 ### Links
 
@@ -36,6 +36,11 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 - HTML Templates
 
 ### Step by step
+
+I went big-to-small when approaching the styling. This was the first time that I tried keeping all the layout rules at the document level (in this case I went grid) and plugged in components that had no margin of their own, only concerned with styling their internal contents. 
+
+I find it helpful to markup a screenshot of the design:
+![Preview Markup](./design/desktop-preview-markup.png)
 
 To see how you can add code snippets, see below:
 

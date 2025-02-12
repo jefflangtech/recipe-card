@@ -20,6 +20,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 ### Preview
 
 ![Solution Preview](./preview.png)
+I forgot to move the mouse cursor, haha.
 
 ### Links
 
@@ -41,26 +42,54 @@ I went big-to-small when approaching the styling. This was the first time that I
 
 I find it helpful to markup a screenshot of the design:
 ![Preview Markup](./design/desktop-preview-markup.png)
+I also missed one grid row, since the hero image needs to occupy its own row, and then I was able to break it out when switching to mobile. I used named grid lines to do that.
 
-To see how you can add code snippets, see below:
+Here is all the content in the center column, between [start-col] and [end-col].
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+main {
+  display: grid;
+  grid-template-columns: 
+    [start-left] 5rem 
+    [start-col] 656px [end-col] 
+    5rem [end-right];
+  grid-template-rows: repeat(auto-fit, minmax(100px, auto));
+  row-gap: 4rem;
+}
+main > * {
+  grid-column: start-col / end-col;
+  grid-row: auto;
 }
 ```
+
+Breaking the hero image out just means to set the grid-column to [start-left] / [end-right]. Pretty nifty!
+
+Finally, here is my custom element in the JS (I excluded the content setter method). First time using custom elements and I'll probably spend some time exploring those use cases more.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+class RecipeCard extends HTMLElement {
+  constructor() {
+    super();
+    this.template = document.createElement("template");
+    this.template.innerHTML = `
+      <h2 id="card-title"></h2>
+      <div id="card-body">
+        <slot></slot>
+      </div>
+    `;
+  }
+
+  connectedCallback() {
+    this.appendChild(this.template.content.cloneNode(true));
+  }
 }
+
+customElements.define('recipe-card', RecipeCard);
 ```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I went light DOM for this project, preferring to let styling for my injected component elements come from global rules. I did structure the CSS in a way that it would have been pretty easy to go shadow DOM and encapsulate component styling, but I'll do that with a future challenge. I also want to try using shadow DOM components that get styling from the global rules, as that sounds like a more complicated challenge.
 
 ### Useful resources
 

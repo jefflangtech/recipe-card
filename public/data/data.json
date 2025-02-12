@@ -96,7 +96,8 @@
             "label": "Fat",
             "content": "22g"
           }
-        ]
+        ],
+        "ordered": false
       }
     }
   }
